@@ -1,0 +1,16 @@
+bf
+dad
+gf
+shrek
+angry-shrek
+tired-shrek
+donkey-shrek
+donkey-shrek-happy
+donkey-shrek-angry
+donkey-shrek-tired
+donkey-shrek-serious
+donkey-shrek-god
+donkey-shrek-final
+donkey
+shrek-cutscene-one
+shrek-cutscene-two

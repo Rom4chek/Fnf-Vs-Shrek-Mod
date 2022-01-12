@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Donke.png">
+	<!-- Created with Adobe Animate version 21.0.6.41649 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="DonkeyDOWN one0000" x="0" y="0" width="361" height="583" frameX="0" frameY="-67" frameWidth="361" frameHeight="650"/>
+	<SubTexture name="DonkeyDOWN one0001" x="371" y="0" width="361" height="618" frameX="0" frameY="-32" frameWidth="361" frameHeight="650"/>
+	<SubTexture name="DonkeyDOWN one0002" x="742" y="0" width="361" height="650"/>
+	<SubTexture name="DonkeyDOWN one0003" x="1113" y="0" width="361" height="625" frameX="0" frameY="-25" frameWidth="361" frameHeight="650"/>
+	<SubTexture name="DonkeyDOWN one0004" x="1113" y="0" width="361" height="625" frameX="0" frameY="-25" frameWidth="361" frameHeight="650"/>
+	<SubTexture name="DonkeyDOWN one0005" x="1113" y="0" width="361" height="625" frameX="0" frameY="-25" frameWidth="361" frameHeight="650"/>
+	<SubTexture name="DonkeyDOWN one0006" x="1113" y="0" width="361" height="625" frameX="0" frameY="-25" frameWidth="361" frameHeight="650"/>
+	<SubTexture name="DonkeyDOWN one0007" x="1113" y="0" width="361" height="625" frameX="0" frameY="-25" frameWidth="361" frameHeight="650"/>
+	<SubTexture name="DonkeyDOWN one0008" x="1113" y="0" width="361" height="625" frameX="0" frameY="-25" frameWidth="361" frameHeight="650"/>
+	<SubTexture name="DonkeyDOWN one0009" x="1113" y="0" width="361" height="625" frameX="0" frameY="-25" frameWidth="361" frameHeight="650"/>
+	<SubTexture name="DonkeyDOWN one0010" x="1113" y="0" width="361" height="625" frameX="0" frameY="-25" frameWidth="361" frameHeight="650"/>
+	<SubTexture name="DonkeyDOWN one0011" x="1113" y="0" width="361" height="625" frameX="0" frameY="-25" frameWidth="361" frameHeight="650"/>
+	<SubTexture name="DonkeyDOWN one0012" x="1113" y="0" width="361" height="625" frameX="0" frameY="-25" frameWidth="361" frameHeight="650"/>
+	<SubTexture name="DonkeyDOWN one0013" x="1113" y="0" width="361" height="625" frameX="0" frameY="-25" frameWidth="361" frameHeight="650"/>
+	<SubTexture name="DonkeyDOWN one0014" x="1113" y="0" width="361" height="625" frameX="0" frameY="-25" frameWidth="361" frameHeight="650"/>
+	<SubTexture name="DonkeyIDLE0000" x="1484" y="0" width="428" height="789" frameX="-69" frameY="-53" frameWidth="497" frameHeight="857"/>
+	<SubTexture name="DonkeyIDLE0001" x="1922" y="0" width="456" height="820" frameX="-14" frameY="-29" frameWidth="497" frameHeight="857"/>
+	<SubTexture name="DonkeyIDLE0002" x="2388" y="0" width="463" height="842" frameX="0" frameY="-13" frameWidth="497" frameHeight="857"/>
+	<SubTexture name="DonkeyIDLE0003" x="2861" y="0" width="391" height="857" frameX="-39" frameY="0" frameWidth="497" frameHeight="857"/>
+	<SubTexture name="DonkeyIDLE0004" x="3262" y="0" width="361" height="820" frameX="-69" frameY="-32" frameWidth="497" frameHeight="857"/>
+	<SubTexture name="DonkeyIDLE0005" x="3262" y="0" width="361" height="820" frameX="-69" frameY="-32" frameWidth="497" frameHeight="857"/>
+	<SubTexture name="DonkeyIDLE0006" x="3262" y="0" width="361" height="820" frameX="-69" frameY="-32" frameWidth="497" frameHeight="857"/>
+	<SubTexture name="DonkeyIDLE0007" x="3262" y="0" width="361" height="820" frameX="-69" frameY="-32" frameWidth="497" frameHeight="857"/>
+	<SubTexture name="DonkeyIDLE0008" x="3262" y="0" width="361" height="820" frameX="-69" frameY="-32" frameWidth="497" frameHeight="857"/>
+	<SubTexture name="DonkeyIDLE0009" x="3262" y="0" width="361" height="820" frameX="-69" frameY="-32" frameWidth="497" frameHeight="857"/>
+	<SubTexture name="DonkeyIDLE0010" x="3262" y="0" width="361" height="820" frameX="-69" frameY="-32" frameWidth="497" frameHeight="857"/>
+	<SubTexture name="DonkeyIDLE0011" x="3262" y="0" width="361" height="820" frameX="-69" frameY="-32" frameWidth="497" frameHeight="857"/>
+	<SubTexture name="DonkeyIDLE0012" x="3262" y="0" width="361" height="820" frameX="-69" frameY="-32" frameWidth="497" frameHeight="857"/>
+	<SubTexture name="DonkeyIDLE0013" x="3262" y="0" width="361" height="820" frameX="-69" frameY="-32" frameWidth="497" frameHeight="857"/>
+	<SubTexture name="DonkeyIDLE0014" x="3262" y="0" width="361" height="820" frameX="-69" frameY="-32" frameWidth="497" frameHeight="857"/>
+	<SubTexture name="DonkeyIDLE0015" x="3262" y="0" width="361" height="820" frameX="-69" frameY="-32" frameWidth="497" frameHeight="857"/>
+	<SubTexture name="DonkeyIDLE0016" x="3262" y="0" width="361" height="820" frameX="-69" frameY="-32" frameWidth="497" frameHeight="857"/>
+	<SubTexture name="DonkeyIDLE0017" x="3262" y="0" width="361" height="820" frameX="-69" frameY="-32" frameWidth="497" frameHeight="857"/>
+	<SubTexture name="DonkeyIDLE0018" x="3262" y="0" width="361" height="820" frameX="-69" frameY="-32" frameWidth="497" frameHeight="857"/>
+	<SubTexture name="DonkeyIDLE0019" x="3262" y="0" width="361" height="820" frameX="-69" frameY="-32" frameWidth="497" frameHeight="857"/>
+	<SubTexture name="DonkeyIDLE0020" x="3262" y="0" width="361" height="820" frameX="-69" frameY="-32" frameWidth="497" frameHeight="857"/>
+	<SubTexture name="DonkeyIDLE0021" x="3262" y="0" width="361" height="820" frameX="-69" frameY="-32" frameWidth="497" frameHeight="857"/>
+	<SubTexture name="DonkeyIDLE0022" x="3262" y="0" width="361" height="820" frameX="-69" frameY="-32" frameWidth="497" frameHeight="857"/>
+	<SubTexture name="DonkeyIDLE0023" x="3262" y="0" width="361" height="820" frameX="-69" frameY="-32" frameWidth="497" frameHeight="857"/>
+	<SubTexture name="DonkeyIDLE0024" x="3262" y="0" width="361" height="820" frameX="-69" frameY="-32" frameWidth="497" frameHeight="857"/>
+	<SubTexture name="DonkeyIDLE0025" x="3262" y="0" width="361" height="820" frameX="-69" frameY="-32" frameWidth="497" frameHeight="857"/>
+	<SubTexture name="DonkeyIDLE0026" x="3262" y="0" width="361" height="820" frameX="-69" frameY="-32" frameWidth="497" frameHeight="857"/>
+	<SubTexture name="DonkeyIDLE0027" x="3262" y="0" width="361" height="820" frameX="-69" frameY="-32" frameWidth="497" frameHeight="857"/>
+	<SubTexture name="DonkeyIDLE0028" x="3262" y="0" width="361" height="820" frameX="-69" frameY="-32" frameWidth="497" frameHeight="857"/>
+	<SubTexture name="DonkeyIDLE0029" x="3262" y="0" width="361" height="820" frameX="-69" frameY="-32" frameWidth="497" frameHeight="857"/>
+	<SubTexture name="DonkeyLEFT one0000" x="3633" y="0" width="154" height="820" frameX="0" frameY="0" frameWidth="212" frameHeight="820"/>
+	<SubTexture name="DonkeyLEFT one0001" x="3797" y="0" width="191" height="820" frameX="0" frameY="0" frameWidth="212" frameHeight="820"/>
+	<SubTexture name="DonkeyLEFT one0002" x="0" y="867" width="212" height="820"/>
+	<SubTexture name="DonkeyLEFT one0003" x="222" y="867" width="200" height="820" frameX="0" frameY="0" frameWidth="212" frameHeight="820"/>
+	<SubTexture name="DonkeyLEFT one0004" x="222" y="867" width="200" height="820" frameX="0" frameY="0" frameWidth="212" frameHeight="820"/>
+	<SubTexture name="DonkeyLEFT one0005" x="222" y="867" width="200" height="820" frameX="0" frameY="0" frameWidth="212" frameHeight="820"/>
+	<SubTexture name="DonkeyLEFT one0006" x="222" y="867" width="200" height="820" frameX="0" frameY="0" frameWidth="212" frameHeight="820"/>
+	<SubTexture name="DonkeyLEFT one0007" x="222" y="867" width="200" height="820" frameX="0" frameY="0" frameWidth="212" frameHeight="820"/>
+	<SubTexture name="DonkeyLEFT one0008" x="222" y="867" width="200" height="820" frameX="0" frameY="0" frameWidth="212" frameHeight="820"/>
+	<SubTexture name="DonkeyLEFT one0009" x="222" y="867" width="200" height="820" frameX="0" frameY="0" frameWidth="212" frameHeight="820"/>
+	<SubTexture name="DonkeyLEFT one0010" x="222" y="867" width="200" height="820" frameX="0" frameY="0" frameWidth="212" frameHeight="820"/>
+	<SubTexture name="DonkeyLEFT one0011" x="222" y="867" width="200" height="820" frameX="0" frameY="0" frameWidth="212" frameHeight="820"/>
+	<SubTexture name="DonkeyLEFT one0012" x="222" y="867" width="200" height="820" frameX="0" frameY="0" frameWidth="212" frameHeight="820"/>
+	<SubTexture name="DonkeyLEFT one0013" x="222" y="867" width="200" height="820" frameX="0" frameY="0" frameWidth="212" frameHeight="820"/>
+	<SubTexture name="DonkeyLEFT one0014" x="222" y="867" width="200" height="820" frameX="0" frameY="0" frameWidth="212" frameHeight="820"/>
+	<SubTexture name="DonkeyRIGHT one0000" x="432" y="867" width="237" height="820" frameX="-62" frameY="0" frameWidth="299" frameHeight="820"/>
+	<SubTexture name="DonkeyRIGHT one0001" x="679" y="867" width="265" height="820" frameX="-34" frameY="0" frameWidth="299" frameHeight="820"/>
+	<SubTexture name="DonkeyRIGHT one0002" x="954" y="867" width="299" height="820"/>
+	<SubTexture name="DonkeyRIGHT one0003" x="1263" y="867" width="288" height="820" frameX="-11" frameY="0" frameWidth="299" frameHeight="820"/>
+	<SubTexture name="DonkeyRIGHT one0004" x="1263" y="867" width="288" height="820" frameX="-11" frameY="0" frameWidth="299" frameHeight="820"/>
+	<SubTexture name="DonkeyRIGHT one0005" x="1263" y="867" width="288" height="820" frameX="-11" frameY="0" frameWidth="299" frameHeight="820"/>
+	<SubTexture name="DonkeyRIGHT one0006" x="1263" y="867" width="288" height="820" frameX="-11" frameY="0" frameWidth="299" frameHeight="820"/>
+	<SubTexture name="DonkeyRIGHT one0007" x="1263" y="867" width="288" height="820" frameX="-11" frameY="0" frameWidth="299" frameHeight="820"/>
+	<SubTexture name="DonkeyRIGHT one0008" x="1263" y="867" width="288" height="820" frameX="-11" frameY="0" frameWidth="299" frameHeight="820"/>
+	<SubTexture name="DonkeyRIGHT one0009" x="1263" y="867" width="288" height="820" frameX="-11" frameY="0" frameWidth="299" frameHeight="820"/>
+	<SubTexture name="DonkeyRIGHT one0010" x="1263" y="867" width="288" height="820" frameX="-11" frameY="0" frameWidth="299" frameHeight="820"/>
+	<SubTexture name="DonkeyRIGHT one0011" x="1263" y="867" width="288" height="820" frameX="-11" frameY="0" frameWidth="299" frameHeight="820"/>
+	<SubTexture name="DonkeyRIGHT one0012" x="1263" y="867" width="288" height="820" frameX="-11" frameY="0" frameWidth="299" frameHeight="820"/>
+	<SubTexture name="DonkeyRIGHT one0013" x="1263" y="867" width="288" height="820" frameX="-11" frameY="0" frameWidth="299" frameHeight="820"/>
+	<SubTexture name="DonkeyRIGHT one0014" x="1263" y="867" width="288" height="820" frameX="-11" frameY="0" frameWidth="299" frameHeight="820"/>
+	<SubTexture name="DonkeyUP one0000" x="1561" y="867" width="361" height="1205"/>
+	<SubTexture name="DonkeyUP one0001" x="1932" y="867" width="361" height="1175" frameX="0" frameY="-30" frameWidth="361" frameHeight="1205"/>
+	<SubTexture name="DonkeyUP one0002" x="2303" y="867" width="361" height="1134" frameX="0" frameY="-71" frameWidth="361" frameHeight="1205"/>
+	<SubTexture name="DonkeyUP one0003" x="2674" y="867" width="361" height="1159" frameX="0" frameY="-46" frameWidth="361" frameHeight="1205"/>
+	<SubTexture name="DonkeyUP one0004" x="2674" y="867" width="361" height="1159" frameX="0" frameY="-46" frameWidth="361" frameHeight="1205"/>
+	<SubTexture name="DonkeyUP one0005" x="2674" y="867" width="361" height="1159" frameX="0" frameY="-46" frameWidth="361" frameHeight="1205"/>
+	<SubTexture name="DonkeyUP one0006" x="2674" y="867" width="361" height="1159" frameX="0" frameY="-46" frameWidth="361" frameHeight="1205"/>
+	<SubTexture name="DonkeyUP one0007" x="2674" y="867" width="361" height="1159" frameX="0" frameY="-46" frameWidth="361" frameHeight="1205"/>
+	<SubTexture name="DonkeyUP one0008" x="2674" y="867" width="361" height="1159" frameX="0" frameY="-46" frameWidth="361" frameHeight="1205"/>
+	<SubTexture name="DonkeyUP one0009" x="2674" y="867" width="361" height="1159" frameX="0" frameY="-46" frameWidth="361" frameHeight="1205"/>
+	<SubTexture name="DonkeyUP one0010" x="2674" y="867" width="361" height="1159" frameX="0" frameY="-46" frameWidth="361" frameHeight="1205"/>
+	<SubTexture name="DonkeyUP one0011" x="2674" y="867" width="361" height="1159" frameX="0" frameY="-46" frameWidth="361" frameHeight="1205"/>
+	<SubTexture name="DonkeyUP one0012" x="2674" y="867" width="361" height="1159" frameX="0" frameY="-46" frameWidth="361" frameHeight="1205"/>
+	<SubTexture name="DonkeyUP one0013" x="2674" y="867" width="361" height="1159" frameX="0" frameY="-46" frameWidth="361" frameHeight="1205"/>
+	<SubTexture name="DonkeyUP one0014" x="2674" y="867" width="361" height="1159" frameX="0" frameY="-46" frameWidth="361" frameHeight="1205"/>
+</TextureAtlas>

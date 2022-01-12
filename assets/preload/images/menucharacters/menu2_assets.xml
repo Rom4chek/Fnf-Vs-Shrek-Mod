@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="menu2_assets.png">
+	<!-- Created with Adobe Animate version 21.0.6.41649 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="gfmenuanimation0000" x="0" y="0" width="699" height="635" frameX="-7" frameY="-23" frameWidth="714" frameHeight="658"/>
+	<SubTexture name="gfmenuanimation0001" x="724" y="0" width="699" height="637" frameX="-7" frameY="-21" frameWidth="714" frameHeight="658"/>
+	<SubTexture name="gfmenuanimation0002" x="0" y="0" width="699" height="635" frameX="-7" frameY="-23" frameWidth="714" frameHeight="658"/>
+	<SubTexture name="gfmenuanimation0003" x="724" y="0" width="699" height="637" frameX="-7" frameY="-21" frameWidth="714" frameHeight="658"/>
+	<SubTexture name="gfmenuanimation0004" x="0" y="0" width="699" height="635" frameX="-7" frameY="-23" frameWidth="714" frameHeight="658"/>
+	<SubTexture name="gfmenuanimation0005" x="724" y="0" width="699" height="637" frameX="-7" frameY="-21" frameWidth="714" frameHeight="658"/>
+	<SubTexture name="gfmenuanimation0006" x="0" y="0" width="699" height="635" frameX="-7" frameY="-23" frameWidth="714" frameHeight="658"/>
+	<SubTexture name="gfmenuanimation0007" x="724" y="0" width="699" height="637" frameX="-7" frameY="-21" frameWidth="714" frameHeight="658"/>
+	<SubTexture name="gfmenuanimation0008" x="0" y="0" width="699" height="635" frameX="-7" frameY="-23" frameWidth="714" frameHeight="658"/>
+	<SubTexture name="gfmenuanimation0009" x="724" y="0" width="699" height="637" frameX="-7" frameY="-21" frameWidth="714" frameHeight="658"/>
+	<SubTexture name="gfmenuanimation0010" x="0" y="0" width="699" height="635" frameX="-7" frameY="-23" frameWidth="714" frameHeight="658"/>
+	<SubTexture name="gfmenuanimation0011" x="724" y="0" width="699" height="637" frameX="-7" frameY="-21" frameWidth="714" frameHeight="658"/>
+	<SubTexture name="gfmenuanimation0012" x="0" y="0" width="699" height="635" frameX="-7" frameY="-23" frameWidth="714" frameHeight="658"/>
+	<SubTexture name="gfmenuanimation0013" x="724" y="0" width="699" height="637" frameX="-7" frameY="-21" frameWidth="714" frameHeight="658"/>
+	<SubTexture name="gfmenuanimation0014" x="0" y="0" width="699" height="635" frameX="-7" frameY="-23" frameWidth="714" frameHeight="658"/>
+	<SubTexture name="gfmenuanimation0015" x="1448" y="0" width="699" height="658" frameX="-7" frameY="0" frameWidth="714" frameHeight="658"/>
+	<SubTexture name="gfmenuanimation0016" x="2172" y="0" width="704" height="658" frameX="-5" frameY="0" frameWidth="714" frameHeight="658"/>
+	<SubTexture name="gfmenuanimation0017" x="2901" y="0" width="704" height="655" frameX="-5" frameY="-3" frameWidth="714" frameHeight="658"/>
+	<SubTexture name="gfmenuanimation0018" x="0" y="683" width="699" height="655" frameX="-7" frameY="-3" frameWidth="714" frameHeight="658"/>
+	<SubTexture name="gfmenuanimation0019" x="724" y="683" width="699" height="655" frameX="-7" frameY="-3" frameWidth="714" frameHeight="658"/>
+	<SubTexture name="gfmenuanimation0020" x="724" y="683" width="699" height="655" frameX="-7" frameY="-3" frameWidth="714" frameHeight="658"/>
+	<SubTexture name="gfmenuanimation0021" x="724" y="683" width="699" height="655" frameX="-7" frameY="-3" frameWidth="714" frameHeight="658"/>
+	<SubTexture name="gfmenuanimation0022" x="724" y="683" width="699" height="655" frameX="-7" frameY="-3" frameWidth="714" frameHeight="658"/>
+	<SubTexture name="gfmenuanimation0023" x="724" y="683" width="699" height="655" frameX="-7" frameY="-3" frameWidth="714" frameHeight="658"/>
+	<SubTexture name="gfmenuanimation0024" x="724" y="683" width="699" height="655" frameX="-7" frameY="-3" frameWidth="714" frameHeight="658"/>
+	<SubTexture name="gfmenuanimation0025" x="1448" y="683" width="714" height="553" frameX="0" frameY="-105" frameWidth="714" frameHeight="658"/>
+	<SubTexture name="gfmenuanimation0026" x="1448" y="683" width="714" height="553" frameX="0" frameY="-105" frameWidth="714" frameHeight="658"/>
+	<SubTexture name="gfmenuanimation0027" x="2187" y="683" width="708" height="564" frameX="-3" frameY="-94" frameWidth="714" frameHeight="658"/>
+	<SubTexture name="gfmenuanimation0028" x="2187" y="683" width="708" height="564" frameX="-3" frameY="-94" frameWidth="714" frameHeight="658"/>
+	<SubTexture name="gfmenuanimation0029" x="2187" y="683" width="708" height="564" frameX="-3" frameY="-94" frameWidth="714" frameHeight="658"/>
+	<SubTexture name="gfmenuanimation0030" x="2187" y="683" width="708" height="564" frameX="-3" frameY="-94" frameWidth="714" frameHeight="658"/>
+	<SubTexture name="gfmenuanimation0031" x="2187" y="683" width="708" height="564" frameX="-3" frameY="-94" frameWidth="714" frameHeight="658"/>
+	<SubTexture name="gfmenuanimation0032" x="2187" y="683" width="708" height="564" frameX="-3" frameY="-94" frameWidth="714" frameHeight="658"/>
+	<SubTexture name="gfmenuanimation0033" x="2187" y="683" width="708" height="564" frameX="-3" frameY="-94" frameWidth="714" frameHeight="658"/>
+	<SubTexture name="gfmenuanimation0034" x="2187" y="683" width="708" height="564" frameX="-3" frameY="-94" frameWidth="714" frameHeight="658"/>
+	<SubTexture name="gfmenuanimation0035" x="724" y="0" width="699" height="637" frameX="-7" frameY="-21" frameWidth="714" frameHeight="658"/>
+	<SubTexture name="gfmenuanimation0036" x="2920" y="683" width="704" height="637" frameX="-5" frameY="-21" frameWidth="714" frameHeight="658"/>
+	<SubTexture name="gfmenuanimation0037" x="0" y="1363" width="704" height="637" frameX="-5" frameY="-21" frameWidth="714" frameHeight="658"/>
+	<SubTexture name="gfmenuanimation0038" x="729" y="1363" width="699" height="637" frameX="-7" frameY="-21" frameWidth="714" frameHeight="658"/>
+	<SubTexture name="gfmenuanimation0039" x="1453" y="1363" width="699" height="638" frameX="-7" frameY="-20" frameWidth="714" frameHeight="658"/>
+	<SubTexture name="gfmenuanimation0040" x="2177" y="1363" width="699" height="638" frameX="-7" frameY="-20" frameWidth="714" frameHeight="658"/>
+	<SubTexture name="gfmenuanimation0041" x="2901" y="1363" width="699" height="639" frameX="-7" frameY="-19" frameWidth="714" frameHeight="658"/>
+	<SubTexture name="gfmenuanimation0042" x="0" y="2027" width="699" height="644" frameX="-7" frameY="-14" frameWidth="714" frameHeight="658"/>
+	<SubTexture name="gfmenuanimation0043" x="0" y="2027" width="699" height="644" frameX="-7" frameY="-14" frameWidth="714" frameHeight="658"/>
+</TextureAtlas>

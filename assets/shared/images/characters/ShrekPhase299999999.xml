@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="ShrekPhase2.99999999.png">
+	<!-- Created with Adobe Animate version 21.0.6.41649 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="ShrekDOWNGOD0000" x="0" y="0" width="1384" height="1242" frameX="0" frameY="0" frameWidth="1384" frameHeight="1244"/>
+	<SubTexture name="ShrekDOWNGOD0001" x="1394" y="0" width="1376" height="1242" frameX="0" frameY="0" frameWidth="1384" frameHeight="1244"/>
+	<SubTexture name="ShrekDOWNGOD0002" x="2780" y="0" width="1317" height="1230" frameX="-21" frameY="-14" frameWidth="1384" frameHeight="1244"/>
+	<SubTexture name="ShrekDOWNGOD0003" x="4107" y="0" width="1332" height="1235" frameX="-21" frameY="-9" frameWidth="1384" frameHeight="1244"/>
+	<SubTexture name="ShrekDOWNGOD0004" x="5449" y="0" width="1353" height="1242" frameX="0" frameY="0" frameWidth="1384" frameHeight="1244"/>
+	<SubTexture name="ShrekDOWNGOD0005" x="5449" y="0" width="1353" height="1242" frameX="0" frameY="0" frameWidth="1384" frameHeight="1244"/>
+	<SubTexture name="ShrekDOWNGOD0006" x="6812" y="0" width="1332" height="1230" frameX="-21" frameY="-14" frameWidth="1384" frameHeight="1244"/>
+	<SubTexture name="ShrekDOWNGOD0007" x="6812" y="0" width="1332" height="1230" frameX="-21" frameY="-14" frameWidth="1384" frameHeight="1244"/>
+	<SubTexture name="ShrekDOWNGOD0008" x="5449" y="0" width="1353" height="1242" frameX="0" frameY="0" frameWidth="1384" frameHeight="1244"/>
+	<SubTexture name="ShrekDOWNGOD0009" x="5449" y="0" width="1353" height="1242" frameX="0" frameY="0" frameWidth="1384" frameHeight="1244"/>
+	<SubTexture name="ShrekDOWNGOD0010" x="6812" y="0" width="1332" height="1230" frameX="-21" frameY="-14" frameWidth="1384" frameHeight="1244"/>
+	<SubTexture name="ShrekDOWNGOD0011" x="6812" y="0" width="1332" height="1230" frameX="-21" frameY="-14" frameWidth="1384" frameHeight="1244"/>
+	<SubTexture name="ShrekDOWNGOD0012" x="5449" y="0" width="1353" height="1242" frameX="0" frameY="0" frameWidth="1384" frameHeight="1244"/>
+	<SubTexture name="ShrekDOWNGOD0013" x="5449" y="0" width="1353" height="1242" frameX="0" frameY="0" frameWidth="1384" frameHeight="1244"/>
+	<SubTexture name="ShrekDOWNGOD0014" x="6812" y="0" width="1332" height="1230" frameX="-21" frameY="-14" frameWidth="1384" frameHeight="1244"/>
+	<SubTexture name="ShrekDOWNGOD0015" x="6812" y="0" width="1332" height="1230" frameX="-21" frameY="-14" frameWidth="1384" frameHeight="1244"/>
+	<SubTexture name="ShrekIDLE GOD0000" x="0" y="1252" width="1345" height="1242" frameX="0" frameY="0" frameWidth="1345" frameHeight="1244"/>
+	<SubTexture name="ShrekIDLE GOD0001" x="0" y="1252" width="1345" height="1242" frameX="0" frameY="0" frameWidth="1345" frameHeight="1244"/>
+	<SubTexture name="ShrekIDLE GOD0002" x="1355" y="1252" width="1324" height="1230" frameX="-21" frameY="-14" frameWidth="1345" frameHeight="1244"/>
+	<SubTexture name="ShrekIDLE GOD0003" x="1355" y="1252" width="1324" height="1230" frameX="-21" frameY="-14" frameWidth="1345" frameHeight="1244"/>
+	<SubTexture name="ShrekIDLE GOD0004" x="0" y="1252" width="1345" height="1242" frameX="0" frameY="0" frameWidth="1345" frameHeight="1244"/>
+	<SubTexture name="ShrekIDLE GOD0005" x="0" y="1252" width="1345" height="1242" frameX="0" frameY="0" frameWidth="1345" frameHeight="1244"/>
+	<SubTexture name="ShrekIDLE GOD0006" x="1355" y="1252" width="1324" height="1230" frameX="-21" frameY="-14" frameWidth="1345" frameHeight="1244"/>
+	<SubTexture name="ShrekIDLE GOD0007" x="1355" y="1252" width="1324" height="1230" frameX="-21" frameY="-14" frameWidth="1345" frameHeight="1244"/>
+	<SubTexture name="ShrekIDLE GOD0008" x="0" y="1252" width="1345" height="1242" frameX="0" frameY="0" frameWidth="1345" frameHeight="1244"/>
+	<SubTexture name="ShrekIDLE GOD0009" x="0" y="1252" width="1345" height="1242" frameX="0" frameY="0" frameWidth="1345" frameHeight="1244"/>
+	<SubTexture name="ShrekIDLE GOD0010" x="1355" y="1252" width="1324" height="1230" frameX="-21" frameY="-14" frameWidth="1345" frameHeight="1244"/>
+	<SubTexture name="ShrekIDLE GOD0011" x="1355" y="1252" width="1324" height="1230" frameX="-21" frameY="-14" frameWidth="1345" frameHeight="1244"/>
+	<SubTexture name="ShrekIDLE GOD0012" x="0" y="1252" width="1345" height="1242" frameX="0" frameY="0" frameWidth="1345" frameHeight="1244"/>
+	<SubTexture name="ShrekIDLE GOD0013" x="0" y="1252" width="1345" height="1242" frameX="0" frameY="0" frameWidth="1345" frameHeight="1244"/>
+	<SubTexture name="ShrekIDLE GOD0014" x="1355" y="1252" width="1324" height="1230" frameX="-21" frameY="-14" frameWidth="1345" frameHeight="1244"/>
+	<SubTexture name="ShrekIDLE GOD0015" x="1355" y="1252" width="1324" height="1230" frameX="-21" frameY="-14" frameWidth="1345" frameHeight="1244"/>
+	<SubTexture name="ShrekLEFT GOD0000" x="2689" y="1252" width="1298" height="1242" frameX="0" frameY="0" frameWidth="1330" frameHeight="1244"/>
+	<SubTexture name="ShrekLEFT GOD0001" x="3997" y="1252" width="1306" height="1242" frameX="0" frameY="0" frameWidth="1330" frameHeight="1244"/>
+	<SubTexture name="ShrekLEFT GOD0002" x="5313" y="1252" width="1309" height="1230" frameX="-21" frameY="-14" frameWidth="1330" frameHeight="1244"/>
+	<SubTexture name="ShrekLEFT GOD0003" x="6632" y="1252" width="1307" height="1230" frameX="-21" frameY="-14" frameWidth="1330" frameHeight="1244"/>
+	<SubTexture name="ShrekLEFT GOD0004" x="0" y="2504" width="1328" height="1242" frameX="0" frameY="0" frameWidth="1330" frameHeight="1244"/>
+	<SubTexture name="ShrekLEFT GOD0005" x="0" y="2504" width="1328" height="1242" frameX="0" frameY="0" frameWidth="1330" frameHeight="1244"/>
+	<SubTexture name="ShrekLEFT GOD0006" x="1338" y="2504" width="1307" height="1230" frameX="-21" frameY="-14" frameWidth="1330" frameHeight="1244"/>
+	<SubTexture name="ShrekLEFT GOD0007" x="1338" y="2504" width="1307" height="1230" frameX="-21" frameY="-14" frameWidth="1330" frameHeight="1244"/>
+	<SubTexture name="ShrekLEFT GOD0008" x="0" y="2504" width="1328" height="1242" frameX="0" frameY="0" frameWidth="1330" frameHeight="1244"/>
+	<SubTexture name="ShrekLEFT GOD0009" x="0" y="2504" width="1328" height="1242" frameX="0" frameY="0" frameWidth="1330" frameHeight="1244"/>
+	<SubTexture name="ShrekLEFT GOD0010" x="1338" y="2504" width="1307" height="1230" frameX="-21" frameY="-14" frameWidth="1330" frameHeight="1244"/>
+	<SubTexture name="ShrekLEFT GOD0011" x="1338" y="2504" width="1307" height="1230" frameX="-21" frameY="-14" frameWidth="1330" frameHeight="1244"/>
+	<SubTexture name="ShrekLEFT GOD0012" x="0" y="2504" width="1328" height="1242" frameX="0" frameY="0" frameWidth="1330" frameHeight="1244"/>
+	<SubTexture name="ShrekLEFT GOD0013" x="0" y="2504" width="1328" height="1242" frameX="0" frameY="0" frameWidth="1330" frameHeight="1244"/>
+	<SubTexture name="ShrekLEFT GOD0014" x="1338" y="2504" width="1307" height="1230" frameX="-21" frameY="-14" frameWidth="1330" frameHeight="1244"/>
+	<SubTexture name="ShrekLEFT GOD0015" x="1338" y="2504" width="1307" height="1230" frameX="-21" frameY="-14" frameWidth="1330" frameHeight="1244"/>
+	<SubTexture name="ShrekRIGHT GOD 0000" x="2655" y="2504" width="1950" height="1242" frameX="0" frameY="0" frameWidth="1950" frameHeight="1244"/>
+	<SubTexture name="ShrekRIGHT GOD 0001" x="4615" y="2504" width="1605" height="1242" frameX="0" frameY="0" frameWidth="1950" frameHeight="1244"/>
+	<SubTexture name="ShrekRIGHT GOD 0002" x="6230" y="2504" width="1580" height="1230" frameX="0" frameY="-14" frameWidth="1950" frameHeight="1244"/>
+	<SubTexture name="ShrekRIGHT GOD 0003" x="0" y="3756" width="1593" height="1230" frameX="0" frameY="-14" frameWidth="1950" frameHeight="1244"/>
+	<SubTexture name="ShrekRIGHT GOD 0004" x="1603" y="3756" width="1593" height="1242" frameX="0" frameY="0" frameWidth="1950" frameHeight="1244"/>
+	<SubTexture name="ShrekRIGHT GOD 0005" x="1603" y="3756" width="1593" height="1242" frameX="0" frameY="0" frameWidth="1950" frameHeight="1244"/>
+	<SubTexture name="ShrekRIGHT GOD 0006" x="3206" y="3756" width="1593" height="1230" frameX="0" frameY="-14" frameWidth="1950" frameHeight="1244"/>
+	<SubTexture name="ShrekRIGHT GOD 0007" x="3206" y="3756" width="1593" height="1230" frameX="0" frameY="-14" frameWidth="1950" frameHeight="1244"/>
+	<SubTexture name="ShrekRIGHT GOD 0008" x="1603" y="3756" width="1593" height="1242" frameX="0" frameY="0" frameWidth="1950" frameHeight="1244"/>
+	<SubTexture name="ShrekRIGHT GOD 0009" x="1603" y="3756" width="1593" height="1242" frameX="0" frameY="0" frameWidth="1950" frameHeight="1244"/>
+	<SubTexture name="ShrekRIGHT GOD 0010" x="3206" y="3756" width="1593" height="1230" frameX="0" frameY="-14" frameWidth="1950" frameHeight="1244"/>
+	<SubTexture name="ShrekRIGHT GOD 0011" x="3206" y="3756" width="1593" height="1230" frameX="0" frameY="-14" frameWidth="1950" frameHeight="1244"/>
+	<SubTexture name="ShrekRIGHT GOD 0012" x="1603" y="3756" width="1593" height="1242" frameX="0" frameY="0" frameWidth="1950" frameHeight="1244"/>
+	<SubTexture name="ShrekRIGHT GOD 0013" x="1603" y="3756" width="1593" height="1242" frameX="0" frameY="0" frameWidth="1950" frameHeight="1244"/>
+	<SubTexture name="ShrekRIGHT GOD 0014" x="3206" y="3756" width="1593" height="1230" frameX="0" frameY="-14" frameWidth="1950" frameHeight="1244"/>
+	<SubTexture name="ShrekRIGHT GOD 0015" x="3206" y="3756" width="1593" height="1230" frameX="0" frameY="-14" frameWidth="1950" frameHeight="1244"/>
+	<SubTexture name="ShrekUP GOD 0000" x="4809" y="3756" width="1273" height="1404" frameX="0" frameY="0" frameWidth="1370" frameHeight="1406"/>
+	<SubTexture name="ShrekUP GOD 0001" x="6092" y="3756" width="1306" height="1242" frameX="0" frameY="-162" frameWidth="1370" frameHeight="1406"/>
+	<SubTexture name="ShrekUP GOD 0002" x="0" y="5170" width="1320" height="1230" frameX="-21" frameY="-176" frameWidth="1370" frameHeight="1406"/>
+	<SubTexture name="ShrekUP GOD 0003" x="1330" y="5170" width="1349" height="1230" frameX="-21" frameY="-176" frameWidth="1370" frameHeight="1406"/>
+	<SubTexture name="ShrekUP GOD 0004" x="2689" y="5170" width="1346" height="1242" frameX="0" frameY="-162" frameWidth="1370" frameHeight="1406"/>
+	<SubTexture name="ShrekUP GOD 0005" x="2689" y="5170" width="1346" height="1242" frameX="0" frameY="-162" frameWidth="1370" frameHeight="1406"/>
+	<SubTexture name="ShrekUP GOD 0006" x="4045" y="5170" width="1325" height="1230" frameX="-21" frameY="-176" frameWidth="1370" frameHeight="1406"/>
+	<SubTexture name="ShrekUP GOD 0007" x="4045" y="5170" width="1325" height="1230" frameX="-21" frameY="-176" frameWidth="1370" frameHeight="1406"/>
+	<SubTexture name="ShrekUP GOD 0008" x="2689" y="5170" width="1346" height="1242" frameX="0" frameY="-162" frameWidth="1370" frameHeight="1406"/>
+	<SubTexture name="ShrekUP GOD 0009" x="2689" y="5170" width="1346" height="1242" frameX="0" frameY="-162" frameWidth="1370" frameHeight="1406"/>
+	<SubTexture name="ShrekUP GOD 0010" x="4045" y="5170" width="1325" height="1230" frameX="-21" frameY="-176" frameWidth="1370" frameHeight="1406"/>
+	<SubTexture name="ShrekUP GOD 0011" x="4045" y="5170" width="1325" height="1230" frameX="-21" frameY="-176" frameWidth="1370" frameHeight="1406"/>
+	<SubTexture name="ShrekUP GOD 0012" x="2689" y="5170" width="1346" height="1242" frameX="0" frameY="-162" frameWidth="1370" frameHeight="1406"/>
+	<SubTexture name="ShrekUP GOD 0013" x="2689" y="5170" width="1346" height="1242" frameX="0" frameY="-162" frameWidth="1370" frameHeight="1406"/>
+	<SubTexture name="ShrekUP GOD 0014" x="4045" y="5170" width="1325" height="1230" frameX="-21" frameY="-176" frameWidth="1370" frameHeight="1406"/>
+	<SubTexture name="ShrekUP GOD 0015" x="4045" y="5170" width="1325" height="1230" frameX="-21" frameY="-176" frameWidth="1370" frameHeight="1406"/>
+</TextureAtlas>

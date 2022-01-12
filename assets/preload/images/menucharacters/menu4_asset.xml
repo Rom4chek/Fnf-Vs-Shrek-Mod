@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="menu4_asset.png">
+	<!-- Created with Adobe Animate version 21.0.6.41649 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="menuanim0000" x="0" y="0" width="846" height="1078" frameX="-514" frameY="0" frameWidth="1877" frameHeight="1078"/>
+	<SubTexture name="menuanim0001" x="871" y="0" width="799" height="753" frameX="-538" frameY="-163" frameWidth="1877" frameHeight="1078"/>
+	<SubTexture name="menuanim0002" x="1695" y="0" width="939" height="538" frameX="-468" frameY="-270" frameWidth="1877" frameHeight="1078"/>
+	<SubTexture name="menuanim0003" x="2659" y="0" width="1248" height="347" frameX="-314" frameY="-366" frameWidth="1877" frameHeight="1078"/>
+	<SubTexture name="menuanim0004" x="0" y="1103" width="1654" height="206" frameX="-111" frameY="-436" frameWidth="1877" frameHeight="1078"/>
+	<SubTexture name="menuanim0005" x="1679" y="1103" width="1877" height="429" frameX="0" frameY="-325" frameWidth="1877" frameHeight="1078"/>
+	<SubTexture name="menuanim0006" x="0" y="0" width="846" height="1078" frameX="-514" frameY="0" frameWidth="1877" frameHeight="1078"/>
+	<SubTexture name="menuanim0007" x="871" y="0" width="799" height="753" frameX="-538" frameY="-163" frameWidth="1877" frameHeight="1078"/>
+	<SubTexture name="menuanim0008" x="1695" y="0" width="939" height="538" frameX="-468" frameY="-270" frameWidth="1877" frameHeight="1078"/>
+	<SubTexture name="menuanim0009" x="2659" y="0" width="1248" height="347" frameX="-314" frameY="-366" frameWidth="1877" frameHeight="1078"/>
+	<SubTexture name="menuanim0010" x="0" y="1103" width="1654" height="206" frameX="-111" frameY="-436" frameWidth="1877" frameHeight="1078"/>
+	<SubTexture name="menuanim0011" x="1679" y="1103" width="1877" height="429" frameX="0" frameY="-325" frameWidth="1877" frameHeight="1078"/>
+</TextureAtlas>
