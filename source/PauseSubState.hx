@@ -66,15 +66,25 @@ class PauseSubState extends MusicBeatSubstate
 		levelDifficulty.updateHitbox();
 		add(levelDifficulty);
 
+		var blueballedTxt:FlxText = new FlxText(20, 15 + 64, 0, "", 32);
+		blueballedTxt.text = "Blueballed: " + PlayState.deathCounter;
+		blueballedTxt.scrollFactor.set();
+		blueballedTxt.setFormat(Paths.font('vcr.ttf'), 32);
+		blueballedTxt.updateHitbox();
+		add(blueballedTxt);
+
 		levelDifficulty.alpha = 0;
 		levelInfo.alpha = 0;
+		blueballedTxt.alpha = 0;
 
 		levelInfo.x = FlxG.width - (levelInfo.width + 20);
 		levelDifficulty.x = FlxG.width - (levelDifficulty.width + 20);
+		blueballedTxt.x = FlxG.width - (blueballedTxt.width + 20);
 
 		FlxTween.tween(bg, {alpha: 0.6}, 0.4, {ease: FlxEase.quartInOut});
 		FlxTween.tween(levelInfo, {alpha: 1, y: 20}, 0.4, {ease: FlxEase.quartInOut, startDelay: 0.3});
 		FlxTween.tween(levelDifficulty, {alpha: 1, y: levelDifficulty.y + 5}, 0.4, {ease: FlxEase.quartInOut, startDelay: 0.5});
+		FlxTween.tween(blueballedTxt, {alpha: 1, y: blueballedTxt.y + 5}, 0.4, {ease: FlxEase.quartInOut, startDelay: 0.7});
 
 		grpMenuShit = new FlxTypedGroup<Alphabet>();
 		add(grpMenuShit);
@@ -144,7 +154,7 @@ class PauseSubState extends MusicBeatSubstate
 		}
 		
 		#if cpp
-			else if (leftP)
+		else if (leftP)
 			{
 				oldOffset = PlayState.songOffset;
 				PlayState.songOffset -= 1;
@@ -171,7 +181,8 @@ class PauseSubState extends MusicBeatSubstate
 					cameras = [FlxG.cameras.list[FlxG.cameras.list.length - 1]];
 					offsetChanged = true;
 				}
-			}else if (rightP)
+			} 
+		     else if (rightP)
 			{
 				oldOffset = PlayState.songOffset;
 				PlayState.songOffset += 1;
@@ -216,6 +227,7 @@ class PauseSubState extends MusicBeatSubstate
 					}
 					FlxG.resetState();
 				case "Exit to menu":
+					PlayState.deathCounter = 0;
 					if (PlayState.instance.useVideo)
 					{
 						GlobalVideo.get().stop();
