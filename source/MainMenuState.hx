@@ -1,5 +1,7 @@
 package;
 
+import flixel.input.keyboard.FlxKeyboard;
+import flixel.input.keyboard.FlxKey;
 import flixel.input.gamepad.FlxGamepad;
 import Controls.KeyboardScheme;
 import flixel.FlxG;
@@ -53,6 +55,13 @@ class MainMenuState extends MusicBeatState
 	var lock:FlxSprite;
 	public static var finishedFunnyMove:Bool = false;
 
+	var theCode:Array<Dynamic> = [
+	[FlxKey.Y], 
+	[FlxKey.O], 
+	[FlxKey.S], 
+	[FlxKey.H], 
+	[FlxKey.A]];
+	var theCodeOrder:Int = 0;
 	override function create()
 	{
 		#if windows
@@ -72,7 +81,10 @@ class MainMenuState extends MusicBeatState
 		bg.setGraphicSize(Std.int(bg.width * 1.1));
 		bg.updateHitbox();
 		bg.screenCenter();
-		bg.antialiasing = true;
+		if(FlxG.save.data.antialiasing)
+			{
+				bg.antialiasing = true;
+			}
 		add(bg);
 
 		camFollow = new FlxObject(0, 0, 1, 1);
@@ -85,7 +97,10 @@ class MainMenuState extends MusicBeatState
 		magenta.updateHitbox();
 		magenta.screenCenter();
 		magenta.visible = false;
-		magenta.antialiasing = true;
+		if(FlxG.save.data.antialiasing)
+			{
+				magenta.antialiasing = true;
+			}
 		magenta.color = 0xFFfd719b;
 		add(magenta);
 		// magenta.scrollFactor.set();
@@ -121,7 +136,10 @@ class MainMenuState extends MusicBeatState
 			case 'shrek':
 				menu_character = new FlxSprite(100, 100);
 				menu_character.frames = Paths.getSparrowAtlas('menucharacters/menu3_assets');
-				menu_character.antialiasing = true;
+				if(FlxG.save.data.antialiasing)
+					{
+						menu_character.antialiasing = true;
+					}
 				menu_character.scale.set(.4, .4);
 				menu_character.scrollFactor.x = 0;
 				menu_character.scrollFactor.y = 0;
@@ -134,7 +152,10 @@ class MainMenuState extends MusicBeatState
 			case 'bf':
 				menu_character = new FlxSprite(100, 100);
 				menu_character.frames = Paths.getSparrowAtlas('menucharacters/Menu1_Assets');
-				menu_character.antialiasing = true;
+				if(FlxG.save.data.antialiasing)
+					{
+						menu_character.antialiasing = true;
+					}
 				menu_character.scale.set(.7, .7);
 				menu_character.scrollFactor.x = 0;
 				menu_character.scrollFactor.y = 0;
@@ -147,7 +168,10 @@ class MainMenuState extends MusicBeatState
 			case 'donkey':
 				menu_character = new FlxSprite(100, 100);
 				menu_character.frames = Paths.getSparrowAtlas('menucharacters/menu4_asset');
-				menu_character.antialiasing = true;
+				if(FlxG.save.data.antialiasing)
+					{
+						menu_character.antialiasing = true;
+					}
 				menu_character.scale.set(.4, .4);
 				menu_character.scrollFactor.x = 0;
 				menu_character.scrollFactor.y = 0;
@@ -160,7 +184,10 @@ class MainMenuState extends MusicBeatState
 			case 'gf':
 				menu_character = new FlxSprite(100, 100);
 				menu_character.frames = Paths.getSparrowAtlas('menucharacters/menu2_assets');
-				menu_character.antialiasing = true;
+				if(FlxG.save.data.antialiasing)
+					{
+						menu_character.antialiasing = true;
+					}
 				menu_character.scale.set(.55, .55);
 				menu_character.scrollFactor.x = 0;
 				menu_character.scrollFactor.y = 0;
@@ -189,7 +216,10 @@ class MainMenuState extends MusicBeatState
 			menuItems.add(menuItem);
 			menuItem.scale.set(0.6, 0.6);
 			menuItem.scrollFactor.set(0, 0);
-			menuItem.antialiasing = true;
+			if(FlxG.save.data.antialiasing)
+				{
+					menuItem.antialiasing = true;
+				}
 			if (firstStart)
 				FlxTween.tween(menuItem,{y: 60 + (i * 130)},1 + (i * 0.25) ,{ease: FlxEase.expoInOut, onComplete: function(flxTween:FlxTween) 
 					{ 
@@ -208,7 +238,10 @@ class MainMenuState extends MusicBeatState
 		logo.updateHitbox();
 		logo.scrollFactor.x = 0;
 		logo.scrollFactor.y = 0;
-		logo.antialiasing = true;
+		if(FlxG.save.data.antialiasing)
+			{
+				logo.antialiasing = true;
+			}
 		logo.scale.set(0.5, 0.5);
 		logo.x += 400;
 		logo.y -= 200;
@@ -250,8 +283,31 @@ class MainMenuState extends MusicBeatState
 
 
 		if (!selectedSomethin)
-		{
-			var gamepad:FlxGamepad = FlxG.gamepads.lastActive;
+			{
+				var gamepad:FlxGamepad = FlxG.gamepads.lastActive;
+	
+				if (FlxG.keys.justPressed.ANY) {
+	
+					var hitCorrectKey:Bool = false;
+					for (i in 0...theCode[theCodeOrder].length) {
+						if (FlxG.keys.checkStatus(theCode[theCodeOrder][i], JUST_PRESSED))
+							hitCorrectKey = true;
+					}
+					if (hitCorrectKey) {
+						if (theCodeOrder == (theCode.length - 1)) {
+							FlxG.switchState(new JulianState());
+						} else {
+							theCodeOrder++;
+							
+						}
+					} else {
+						theCodeOrder = 0;
+						for (i in 0...theCode[0].length) {
+							if (FlxG.keys.checkStatus(theCode[0][i], JUST_PRESSED))
+								theCodeOrder = 1;
+						}
+					}
+				}
 
 			if (gamepad != null)
 			{
