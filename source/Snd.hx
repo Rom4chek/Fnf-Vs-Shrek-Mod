@@ -732,7 +732,7 @@ class Snd {
 	/**
 	 * launches the sound, stops previous and rewrite the cur play dropping it into oblivion for the gc
 	 */
-	public function start(loops:Int=0, vol:Float=1.0, ?startOffsetMs:Float=0.0) {
+	 public function start(loops:Int=0, vol:Float=1.0, ?startOffsetMs:Float=0.0) {
 		if ( DISABLED ) 			{
 			//#if debug
 			//trace("[SND] Disabled");
@@ -777,7 +777,7 @@ class Snd {
 	/**
 	 * launches the sound and rewrite the cur play dropping it into oblivion for the gc
 	 */
-	public function startNoStop(?loops:Int=0, ?vol:Float=1.0, ?startOffsetMs:Float=0.0) : Null<Channel>{
+	 public function startNoStop(?loops:Int=0, ?vol:Float=1.0, ?startOffsetMs:Float=0.0) : Null<Channel>{
 		if ( DISABLED ) 			{
 			//#if debug
 			//trace("[SND] Disabled");

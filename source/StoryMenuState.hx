@@ -121,7 +121,10 @@ class StoryMenuState extends MusicBeatState
 			grpWeekText.add(weekThing);
 
 			weekThing.screenCenter(X);
-			weekThing.antialiasing = true;
+			if(FlxG.save.data.antialiasing)
+				{
+					weekThing.antialiasing = true;
+				}
 			// weekThing.updateHitbox();
 
 			// Needs an offset thingie
@@ -132,7 +135,10 @@ class StoryMenuState extends MusicBeatState
 				lock.animation.addByPrefix('lock', 'lock');
 				lock.animation.play('lock');
 				lock.ID = i;
-				lock.antialiasing = true;
+				if(FlxG.save.data.antialiasing)
+					{
+						lock.antialiasing = true;
+					}
 				grpLocks.add(lock);
 			}
 		}
@@ -153,7 +159,10 @@ class StoryMenuState extends MusicBeatState
 		leftArrow.animation.addByPrefix('idle', "arrow left");
 		leftArrow.animation.addByPrefix('press', "arrow push left");
 		leftArrow.animation.play('idle');
-		leftArrow.antialiasing = true;
+		if(FlxG.save.data.antialiasing)
+			{
+				leftArrow.antialiasing = true;
+			}
 		difficultySelectors.add(leftArrow);
 
 		sprDifficulty = new FlxSprite(leftArrow.x + 130, leftArrow.y);
@@ -162,7 +171,10 @@ class StoryMenuState extends MusicBeatState
 		sprDifficulty.animation.addByPrefix('normal', 'NORMAL');
 		sprDifficulty.animation.addByPrefix('hard', 'HARD');
 		sprDifficulty.animation.play('easy');
-		sprDifficulty.antialiasing = true;
+		if(FlxG.save.data.antialiasing)
+			{
+				sprDifficulty.antialiasing = true;
+			}
 		changeDifficulty();
 
 		difficultySelectors.add(sprDifficulty);
@@ -172,7 +184,10 @@ class StoryMenuState extends MusicBeatState
 		rightArrow.animation.addByPrefix('idle', 'arrow right');
 		rightArrow.animation.addByPrefix('press', "arrow push right", 24, false);
 		rightArrow.animation.play('idle');
-		rightArrow.antialiasing = true;
+		if(FlxG.save.data.antialiasing)
+			{
+				rightArrow.antialiasing = true;
+			}
 		difficultySelectors.add(rightArrow);
 
 		trace("Line 150");
