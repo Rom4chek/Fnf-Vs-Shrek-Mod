@@ -31,6 +31,7 @@ class OptionsMenu extends MusicBeatState
 			new Naughtyness("No swears and other *not friendly kid* things."),
 			new CameraMovement("Makes the camera move to the notes you or your opponent presses."),
 			new SpecialNoteFlash("Enable or disable flashing when you press special notes."),
+			new AlphaNotes("Enable or disable transparent damage notes."),
 			new HitSound("Enable hit sounds."),
 		]),
 
@@ -66,6 +67,8 @@ class OptionsMenu extends MusicBeatState
 			#end
 			new FlashingLightsOption("Toggle flashing lights that can cause epileptic seizures and strain."),
 			new WatermarkOption("Enable and disable all watermarks from the engine."),
+			new AntialiasingOption("Toggle antialiasing, improving graphics quality at a slight performance penalty."),
+			new MissSoundsOption("Toggle miss sounds playing when you don't hit a note."),
 			new ScoreScreen("Show the score screen after the end of a song"),
 			new ShowInput("Display every single input in the score screen."),
 			new Optimization("No backgrounds, no characters, centered notes, no player 2. (TURN OFF MODCHARTS BECAUSE IT'S NOT WORK WHEN MODCHARTS IS TURNED ON)"),
@@ -78,7 +81,8 @@ class OptionsMenu extends MusicBeatState
 			new ReplayOption("View saved song replays."),
 			#end
 			new ResetScoreOption("Reset your score on all songs and weeks. This is irreversible!"),
-			new ResetSettings("Reset ALL your settings. This is irreversible!")
+			new ResetSettings("Reset ALL your settings. This is irreversible!"),
+			new SocialCredit("wanna them?")
 		])
 		
 	];
@@ -93,6 +97,7 @@ class OptionsMenu extends MusicBeatState
 	var blackBorder:FlxSprite;
 	override function create()
 	{
+		clean();
 		instance = this;
 		var menuBG:FlxSprite = new FlxSprite().loadGraphic(Paths.image("menuMagenta"));
 
@@ -100,39 +105,40 @@ class OptionsMenu extends MusicBeatState
 		menuBG.setGraphicSize(Std.int(menuBG.width * 1.1));
 		menuBG.updateHitbox();
 		menuBG.screenCenter();
-		menuBG.antialiasing = true;
+		menuBG.antialiasing = FlxG.save.data.antialiasing;
 		add(menuBG);
 
 		grpControls = new FlxTypedGroup<Alphabet>();
 		add(grpControls);
 
 		for (i in 0...options.length)
-			{
-				var controlLabel:Alphabet = new Alphabet(0, (70 * i) + 30, options[i].getName(), true, false, true);
-				controlLabel.isMenuItem = true;
-				controlLabel.targetY = i;
-				grpControls.add(controlLabel);
-				// DONT PUT X IN THE FIRST PARAMETER OF new ALPHABET() !!
-			}
-	
+		{
+			var controlLabel:Alphabet = new Alphabet(0, (70 * i) + 30, options[i].getName(), true, false, true);
+			controlLabel.isMenuItem = true;
+			controlLabel.targetY = i;
+			grpControls.add(controlLabel);
+			// DONT PUT X IN THE FIRST PARAMETER OF new ALPHABET() !!
+		}
 
-			currentDescription = "none";
+		currentDescription = "none";
 
-			versionShit = new FlxText(5, FlxG.height + 40, 0, "Offset (Left, Right, Shift for slow): " + HelperFunctions.truncateFloat(FlxG.save.data.offset,2) + " - Description - " + currentDescription, 12);
-			versionShit.scrollFactor.set();
-			versionShit.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
-			
-			blackBorder = new FlxSprite(-30,FlxG.height + 40).makeGraphic((Std.int(versionShit.width + 900)),Std.int(versionShit.height + 600),FlxColor.BLACK);
-			blackBorder.alpha = 0.5;
-	
-			add(blackBorder);
-	
-			add(versionShit);
-	
-			FlxTween.tween(versionShit,{y: FlxG.height - 18},2,{ease: FlxEase.elasticInOut});
-			FlxTween.tween(blackBorder,{y: FlxG.height - 18},2, {ease: FlxEase.elasticInOut});
-	
-			super.create();
+		versionShit = new FlxText(5, FlxG.height + 40, 0, "Offset (Left, Right, Shift for slow): " + HelperFunctions.truncateFloat(FlxG.save.data.offset,2) + " - Description - " + currentDescription, 12);
+		versionShit.scrollFactor.set();
+		versionShit.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		
+		blackBorder = new FlxSprite(-30,FlxG.height + 40).makeGraphic((Std.int(versionShit.width + 900)),Std.int(versionShit.height + 600),FlxColor.BLACK);
+		blackBorder.alpha = 0.5;
+
+		add(blackBorder);
+
+		add(versionShit);
+
+		FlxTween.tween(versionShit,{y: FlxG.height - 18},2,{ease: FlxEase.elasticInOut});
+		FlxTween.tween(blackBorder,{y: FlxG.height - 18},2, {ease: FlxEase.elasticInOut});
+		
+		changeSelection();
+
+		super.create();
 	}
 
 	var isCat:Bool = false;
@@ -145,7 +151,9 @@ class OptionsMenu extends MusicBeatState
 		if (acceptInput)
 		{
 			if (controls.BACK && !isCat)
+			{
 				FlxG.switchState(new MainMenuState());
+			}
 			else if (controls.BACK)
 			{
 				isCat = false;
@@ -244,7 +252,7 @@ class OptionsMenu extends MusicBeatState
 			
 	
 				if (controls.RESET)
-					FlxG.save.data.offset = 0;
+						FlxG.save.data.offset = 0;
 
 			if (controls.ACCEPT)
 			{
@@ -280,25 +288,25 @@ class OptionsMenu extends MusicBeatState
 	var isSettingControl:Bool = false;
 
 	function changeSelection(change:Int = 0)
-	{
-		#if !switch
-		// NGio.logEvent("Fresh");
-		#end
-		
-		FlxG.sound.play(Paths.sound("scrollMenu"), 0.4);
-
-		curSelected += change;
-
-		if (curSelected < 0)
-			curSelected = grpControls.length - 1;
-		if (curSelected >= grpControls.length)
-			curSelected = 0;
-
-		if (isCat)
-			currentDescription = currentSelectedCat.getOptions()[curSelected].getDescription();
-		else
-			currentDescription = "Please select a category";
-		if (isCat)
+		{
+			#if !switch
+			// NGio.logEvent("Fresh");
+			#end
+			
+			FlxG.sound.play(Paths.sound("scrollMenu"), 0.4);
+	
+			curSelected += change;
+	
+			if (curSelected < 0)
+				curSelected = grpControls.length - 1;
+			if (curSelected >= grpControls.length)
+				curSelected = 0;
+	
+			if (isCat)
+				currentDescription = currentSelectedCat.getOptions()[curSelected].getDescription();
+			else
+				currentDescription = "Please select a category";
+			if (isCat)
 			{
 				if (currentSelectedCat.getOptions()[curSelected].getAccept())
 					versionShit.text =  currentSelectedCat.getOptions()[curSelected].getValue() + " - Description - " + currentDescription;

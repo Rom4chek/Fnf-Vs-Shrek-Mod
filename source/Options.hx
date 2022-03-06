@@ -173,7 +173,29 @@ class SpecialNoteFlash extends Option
 
 	private override function updateDisplay():String
 	{
-		return  FlxG.save.data.flashimposter ? "Flash when hit Special Note" : "no effects when hit Special Note";
+		return "Special Note effect " + (!FlxG.save.data.flashimposter ? "off" : "on");
+	}
+
+}
+
+class AlphaNotes extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+
+	public override function press():Bool
+	{
+		FlxG.save.data.imposteralpha = !FlxG.save.data.imposteralpha;
+		display = updateDisplay();
+		return true;
+	}
+
+	private override function updateDisplay():String
+	{
+		return "Transparent Damage Notes " + (!FlxG.save.data.imposteralpha ? "off" : "on");
 	}
 
 }
@@ -386,6 +408,46 @@ class FlashingLightsOption extends Option
 	private override function updateDisplay():String
 	{
 		return "Flashing Lights " + (!FlxG.save.data.flashing ? "off" : "on");
+	}
+}
+
+class AntialiasingOption extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+	public override function press():Bool
+	{
+		FlxG.save.data.antialiasing = !FlxG.save.data.antialiasing;
+		display = updateDisplay();
+		return true;
+	}
+
+	private override function updateDisplay():String
+	{
+		return "Antialiasing " + (!FlxG.save.data.antialiasing ? "off" : "on");
+	}
+}
+
+class MissSoundsOption extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+	public override function press():Bool
+	{
+		FlxG.save.data.missSounds = !FlxG.save.data.missSounds;
+		display = updateDisplay();
+		return true;
+	}
+
+	private override function updateDisplay():String
+	{
+		return "Miss Sounds " + (!FlxG.save.data.missSounds ? "off" : "on");
 	}
 }
 
@@ -734,6 +796,30 @@ class CustomizeGameplay extends Option
 	private override function updateDisplay():String
 	{
 		return "Customize Gameplay";
+	}
+}
+
+class SocialCredit extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+
+	public override function press():Bool
+	{
+		trace("YOOOO COOL");
+		PlayState.SONG = Song.loadFromJson(Highscore.formatSong('Super-Idol', 1), 'super-idol');
+		PlayState.isStoryMode = false;
+		PlayState.storyDifficulty = 1;
+		LoadingState.loadAndSwitchState(new PlayState());
+		return false;
+	}
+
+	private override function updateDisplay():String
+	{
+		return "Get Social Credit";
 	}
 }
 
