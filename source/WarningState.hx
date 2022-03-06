@@ -13,7 +13,10 @@ class WarningState extends MusicBeatState
 	{
 		super.create();
 		var warn:FlxSprite = new FlxSprite(0, 0).loadGraphic(Paths.image('Warning'));
-		warn.antialiasing = true;
+		if(FlxG.save.data.antialiasing)
+			{
+				warn.antialiasing = true;
+			}
 		add(warn);
 	}
 
