@@ -2,6 +2,8 @@ package;
 
 import flixel.FlxG;
 import flixel.FlxObject;
+import flixel.FlxSprite;
+import flixel.FlxCamera;
 import flixel.FlxSubState;
 import flixel.math.FlxPoint;
 import flixel.util.FlxColor;
@@ -9,6 +11,7 @@ import flixel.util.FlxTimer;
 
 class GameOverSubstate extends MusicBeatSubstate
 {
+
 	var weekData:Array<Dynamic> = [
 		['Tutorial'],
 		['All Star', 'Tiny Mad'],
@@ -16,6 +19,9 @@ class GameOverSubstate extends MusicBeatSubstate
 	];
 	var bf:Boyfriend;
 	var camFollow:FlxObject;
+	var warn:FlxSprite;
+
+	public var camHUD:FlxCamera;
 
 	var stageSuffix:String = "";
 
@@ -39,6 +45,22 @@ class GameOverSubstate extends MusicBeatSubstate
 		bf = new Boyfriend(x, y, daBf);
 		add(bf);
 
+		camHUD = new FlxCamera();
+
+		warn = new FlxSprite(0, 0).loadGraphic(Paths.image('Modchart'));
+		if(FlxG.save.data.antialiasing)
+			{
+				warn.antialiasing = true;
+			}
+        warn.screenCenter(X);
+		if(FlxG.save.data.modChart)
+			{
+				if (PlayState.deathCounter == 5)
+					{
+						warned = true;
+					}
+			}
+
 		camFollow = new FlxObject(bf.getGraphicMidpoint().x, bf.getGraphicMidpoint().y, 1, 1);
 		add(camFollow);
 
@@ -49,11 +71,19 @@ class GameOverSubstate extends MusicBeatSubstate
 		// FlxG.camera.focusOn(FlxPoint.get(FlxG.width / 2, FlxG.height / 2));
 		FlxG.camera.scroll.set();
 		FlxG.camera.target = null;
+		FlxG.cameras.add(camHUD);
 
 		bf.playAnim('firstDeath');
 	}
 
 	var startVibin:Bool = false;
+	var warned:Bool = false;
+
+	override public function create()
+		{
+			warn.cameras = [camHUD];
+			camHUD.visible = false;
+		}
 
 	override function update(elapsed:Float)
 	{
@@ -61,18 +91,44 @@ class GameOverSubstate extends MusicBeatSubstate
 
 		if (controls.ACCEPT)
 		{
-			endBullshit();
+			if(warned)
+				{
+					if(camHUD.visible == true)
+						{
+							remove(warn);
+							warned = false;
+							camHUD.visible = false;
+							FlxG.save.data.modChart = false;
+						}
+				}
+			else
+				{
+					endBullshit();
+				}
 		}
 
 		if (controls.BACK)
 		{
-			FlxG.sound.music.stop();
-
-			if (PlayState.isStoryMode)
-				FlxG.switchState(new StoryMenuState());
+			if(warned)
+				{
+					if(camHUD.visible == true)
+						{
+							remove(warn);
+							warned = false;
+							camHUD.visible = false;
+							FlxG.save.data.modChart = true;
+						}
+				}
 			else
-				FlxG.switchState(new FreeplayState());
-			PlayState.loadRep = false;
+				{
+					FlxG.sound.music.stop();
+
+					if (PlayState.isStoryMode)
+						FlxG.switchState(new StoryMenuState());
+					else
+						FlxG.switchState(new FreeplayState());
+					PlayState.loadRep = false;
+				}
 		}
 
 		if (bf.animation.curAnim.name == 'firstDeath' && bf.animation.curAnim.curFrame == 12)
@@ -92,6 +148,14 @@ class GameOverSubstate extends MusicBeatSubstate
 					var random = FlxG.random.int(1, 4);
 					var deathSound = FlxG.sound.play(Paths.sound("TinyMadDeadLine" + random));
 			}
+			if(FlxG.save.data.modChart)
+				{
+					if (PlayState.deathCounter == 5)
+						{
+							add(warn);
+							camHUD.visible = true;
+						}
+				}
 		}
 
 		if (FlxG.sound.music.playing)
