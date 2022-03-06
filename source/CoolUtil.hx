@@ -1,6 +1,14 @@
+
 package;
 
+import flash.display.BitmapData;
 import lime.utils.Assets;
+import lime.app.Application;
+import openfl.display.BitmapData;
+#if sys
+import sys.io.File;
+import sys.FileSystem;
+#end
 
 using StringTools;
 
@@ -24,6 +32,18 @@ class CoolUtil
 
 		return daList;
 	}
+
+	public static function coolTextFile2(path:String):Array<String>
+		{
+			var daList:Array<String> = File.getContent(path).trim().split('\n');
+	
+			for (i in 0...daList.length)
+			{
+				daList[i] = daList[i].trim();
+			}
+	
+			return daList;
+		}
 	
 	public static function coolStringFile(path:String):Array<String>
 		{

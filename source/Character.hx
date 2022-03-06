@@ -26,7 +26,10 @@ class Character extends FlxSprite
 		this.isPlayer = isPlayer;
 
 		var tex:FlxAtlasFrames;
-		antialiasing = true;
+		if(FlxG.save.data.antialiasing)
+			{
+				antialiasing = true;
+			}
 
 		switch (curCharacter)
 		{
@@ -125,6 +128,24 @@ class Character extends FlxSprite
 				addOffset("singDOWN", 0, -30);
 
 				playAnim('idle');
+
+				case 'bfdad':
+					// DAD ANIMATION LOADING CODE
+					tex = Paths.getSparrowAtlas('characters/DADDY_DEAREST', 'shared');
+					frames = tex;
+					animation.addByPrefix('idle', 'Dad idle dance', 24, false);
+					animation.addByPrefix('singUP', 'Dad Sing Note UP', 24, false);
+					animation.addByPrefix('singRIGHT', 'Dad Sing Note RIGHT', 24, false);
+					animation.addByPrefix('singDOWN', 'Dad Sing Note DOWN', 24, false);
+					animation.addByPrefix('singLEFT', 'Dad Sing Note LEFT', 24, false);
+	
+					addOffset('idle');
+					addOffset("singUP", -6, 50);
+					addOffset("singRIGHT", 0, 27);
+					addOffset("singLEFT", -10, 10);
+					addOffset("singDOWN", 0, -30);
+	
+					playAnim('idle');
 
 				case 'shrek':
 					tex = Paths.getSparrowAtlas('characters/ShrekPhase1', 'shared');
@@ -389,6 +410,22 @@ class Character extends FlxSprite
 														addOffset("Bruh", 13, 150);
 										
 														playAnim('idle');
+
+														case 'china-shrek':
+															frames = Paths.getSparrowAtlas('characters/SHREK_CHINESE', 'shared');
+															animation.addByPrefix('idle', 'Idle', 24, false);
+															animation.addByPrefix('singUP', 'Up', 24, false);
+															animation.addByPrefix('singDOWN', 'Down', 24, false);
+															animation.addByPrefix('singLEFT', 'Left', 24, false);
+															animation.addByPrefix('singRIGHT', 'Right', 24, false);
+											
+															addOffset('idle', -19, 102);
+															addOffset("singUP", 32, 214);
+															addOffset("singRIGHT", -42, 89);
+															addOffset("singLEFT", 105, 110);
+															addOffset("singDOWN", 15, 59);
+											
+															playAnim('idle');
 	
 
 							case 'shrek-cutscene-one':
@@ -616,6 +653,17 @@ class Character extends FlxSprite
 			}
 		}
 	}
+
+	public function loadOffsetFile(character:String)
+		{
+			var offset:Array<String> = CoolUtil.coolTextFile(Paths.txt('images/characters/' + character + "Offsets", 'shared'));
+	
+			for (i in 0...offset.length)
+			{
+				var data:Array<String> = offset[i].split(' ');
+				addOffset(data[0], Std.parseInt(data[1]), Std.parseInt(data[2]));
+			}
+		}
 
 	override function update(elapsed:Float)
 	{

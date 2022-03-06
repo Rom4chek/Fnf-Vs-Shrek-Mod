@@ -14,3 +14,4 @@ donkey-shrek-final
 donkey
 shrek-cutscene-one
 shrek-cutscene-two
+china-shrek

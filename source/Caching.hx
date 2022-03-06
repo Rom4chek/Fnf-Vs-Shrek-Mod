@@ -26,6 +26,7 @@ import flixel.math.FlxRect;
 import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 import flixel.text.FlxText;
+import flixel.input.keyboard.FlxKey;
 
 using StringTools;
 
@@ -66,7 +67,7 @@ class Caching extends MusicBeatState
 		text = new FlxText(FlxG.width / 2, FlxG.height / 2 + 300,0,"Loading...");
 		text.size = 34;
 		text.alignment = FlxTextAlign.CENTER;
-		text.alpha = 0;
+		text.alpha = 1;
 
 		kadeLogo = new FlxSprite(FlxG.width / 2, FlxG.height / 2).loadGraphic(Paths.image('KadeEngineLogo'));
 		kadeLogo.x -= kadeLogo.width / 2;
@@ -74,9 +75,12 @@ class Caching extends MusicBeatState
 		text.y -= kadeLogo.height / 2 - 200;
 		text.x -= 170;
 		kadeLogo.setGraphicSize(Std.int(kadeLogo.width * 0.6));
-		kadeLogo.antialiasing = true;
+		if(FlxG.save.data.antialiasing)
+			{
+				kadeLogo.antialiasing = true;
+			}
 		
-		kadeLogo.alpha = 0;
+		kadeLogo.alpha = 1;
 
 		#if cpp
 		if (FlxG.save.data.cacheImages)
@@ -84,11 +88,11 @@ class Caching extends MusicBeatState
 			trace("caching images...");
 
 			for (i in FileSystem.readDirectory(FileSystem.absolutePath("assets/shared/images/characters")))
-			{
-				if (!i.endsWith(".png"))
-					continue;
-				images.push(i);
-			}
+				{
+					if (!i.endsWith(".png"))
+						continue;
+					images.push(i);
+				}
 		}
 
 		trace("caching music...");
@@ -119,9 +123,6 @@ class Caching extends MusicBeatState
 			{
 				if (toBeDone != 0 && done != toBeDone)
 					{
-						var alpha = HelperFunctions.truncateFloat(done / toBeDone * 100,2) / 100;
-						kadeLogo.alpha = alpha;
-						text.alpha = alpha;
 						text.text = "Loading... (" + done + "/" + toBeDone + ")";
 					}
 			}
@@ -152,13 +153,16 @@ class Caching extends MusicBeatState
 
 		for (i in images)
 		{
-			var replaced = i.replace(".png","");
+			var replaced = i.replace(".png", "");
+
 			var data:BitmapData = BitmapData.fromFile("assets/shared/images/characters/" + i);
-			trace('id ' + replaced + ' file - assets/shared/images/characters/' + i + ' ${data.width}');
+			var imagePath = Paths.image('characters/$i', 'shared');
+			trace('Caching character graphic $i ($imagePath)...');
+			var data:BitmapData = BitmapData.fromFile(i);
 			var graph = FlxGraphic.fromBitmapData(data);
 			graph.persist = true;
 			graph.destroyOnNoUse = false;
-			bitmapData.set(replaced,graph);
+			bitmapData.set(replaced, graph);
 			done++;
 		}
 
@@ -177,7 +181,7 @@ class Caching extends MusicBeatState
 		loaded = true;
 
 		trace(Assets.cache.hasBitmapData('GF_assets'));
-
+		
 		FlxG.switchState(new TitleState());
 	}
 

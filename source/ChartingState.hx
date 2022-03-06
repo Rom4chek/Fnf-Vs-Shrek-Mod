@@ -233,6 +233,30 @@ class ChartingState extends MusicBeatState
 			FlxG.sound.music.volume = vol;
 		};
 
+		var check_mute_vocals = new FlxUICheckBox(10, 220, null, null, "Mute Bf Voice (in editor)", 100);
+		check_mute_vocals.checked = false;
+		check_mute_vocals.callback = function()
+		{
+			var vol:Float = 1;
+
+			if (check_mute_vocals.checked)
+				vol = 0;
+
+			vocals.volume = vol;
+		};
+
+		var check_mute_dadvocals = new FlxUICheckBox(10, 240, null, null, "Mute Dad Voice (in editor)", 100);
+		check_mute_dadvocals.checked = false;
+		check_mute_dadvocals.callback = function()
+		{
+			var vol:Float = 1;
+
+			if (check_mute_dadvocals.checked)
+				vol = 0;
+
+			dadvocals.volume = vol;
+		};
+
 		var saveButton:FlxButton = new FlxButton(110, 8, "Save", function()
 		{
 			saveLevel();
@@ -362,6 +386,8 @@ class ChartingState extends MusicBeatState
 		tab_group_song.add(restart);
 		tab_group_song.add(check_voices);
 		tab_group_song.add(check_mute_inst);
+		tab_group_song.add(check_mute_vocals);
+		tab_group_song.add(check_mute_dadvocals);
 		tab_group_song.add(saveButton);
 		tab_group_song.add(reloadSong);
 		tab_group_song.add(reloadSongJson);
