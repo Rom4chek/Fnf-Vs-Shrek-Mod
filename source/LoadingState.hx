@@ -1,3 +1,4 @@
+
 package;
 
 import lime.app.Promise;
@@ -36,16 +37,20 @@ class LoadingState extends MusicBeatState
 	
 	override function create()
 	{
-		logo = new FlxSprite(-150, -100);
-		logo.frames = Paths.getSparrowAtlas('logoBumpin');
-		logo.antialiasing = true;
-		logo.animation.addByPrefix('bump', 'logo bumpin', 24);
+		logo = new FlxSprite(-110, -100);
+		logo.frames = Paths.getSparrowAtlas('KadeEngineLogoBumpin');
+		if(FlxG.save.data.antialiasing)
+			{
+				logo.antialiasing = true;
+			}
+		logo.animation.addByIndices('bump', 'logo bumpin', [30, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], "", 24, false);
+		logo.animation.addByIndices('bump', 'logo bumpin', [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29], "", 24, false);
 		logo.animation.play('bump');
 		logo.updateHitbox();
-		// logoBl.screenCenter();
-		// logoBl.color = FlxColor.BLACK;
+		// logo.screenCenter();
+		// logo.color = FlxColor.BLACK;
 
-		gfDance = new FlxSprite(FlxG.width * 0.4, FlxG.height * 0.07);
+		gfDance = new FlxSprite(FlxG.width * 0.4, FlxG.height * -0.05);
 		gfDance.frames = Paths.getSparrowAtlas('gfDanceTitle');
 		gfDance.animation.addByIndices('danceLeft', 'gfDance', [30, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], "", 24, false);
 		gfDance.animation.addByIndices('danceRight', 'gfDance', [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29], "", 24, false);
@@ -142,7 +147,6 @@ class LoadingState extends MusicBeatState
 	static function getVocalPath()
 	{
 		return Paths.voices(PlayState.SONG.song);
-		return Paths.dadvoices(PlayState.SONG.song);
 	}
 	
 	inline static public function loadAndSwitchState(target:FlxState, stopMusic = false)
