@@ -26,6 +26,7 @@ import flixel.util.FlxTimer;
 import io.newgrounds.NG;
 import lime.app.Application;
 import openfl.Assets;
+import sys.io.Process;
 
 #if windows
 import Discord.DiscordClient;
@@ -172,7 +173,10 @@ class TitleState extends MusicBeatState
 		if(Main.watermarks) {
 			logoBl = new FlxSprite(-110, -100);
 			logoBl.frames = Paths.getSparrowAtlas('KadeEngineLogoBumpin');
-			logoBl.antialiasing = true;
+			if(FlxG.save.data.antialiasing)
+				{
+					logoBl.antialiasing = true;
+				}
 			logoBl.animation.addByIndices('bump', 'logo bumpin', [30, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], "", 24, false);
 			logoBl.animation.addByIndices('bump', 'logo bumpin', [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29], "", 24, false);
 			logoBl.animation.play('bump');
@@ -180,10 +184,14 @@ class TitleState extends MusicBeatState
 			// logoBl.screenCenter();
 			// logoBl.color = FlxColor.BLACK;
 		} else {
-			logoBl = new FlxSprite(-120, -100);
-			logoBl.frames = Paths.getSparrowAtlas('logoBumpin');
-			logoBl.antialiasing = true;
-			logoBl.animation.addByPrefix('bump', 'logo bumpin', 24, false);
+			logoBl = new FlxSprite(-110, -100);
+			logoBl.frames = Paths.getSparrowAtlas('KadeEngineLogoBumpin');
+			if(FlxG.save.data.antialiasing)
+				{
+					logoBl.antialiasing = true;
+				}
+			logoBl.animation.addByIndices('bump', 'logo bumpin', [30, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], "", 24, false);
+			logoBl.animation.addByIndices('bump', 'logo bumpin', [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29], "", 24, false);
 			logoBl.animation.play('bump');
 			logoBl.updateHitbox();
 			// logoBl.screenCenter();
@@ -194,7 +202,10 @@ class TitleState extends MusicBeatState
 		gfDance.frames = Paths.getSparrowAtlas('gfDanceTitle');
 		gfDance.animation.addByIndices('danceLeft', 'gfDance', [30, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], "", 24, false);
 		gfDance.animation.addByIndices('danceRight', 'gfDance', [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29], "", 24, false);
-		gfDance.antialiasing = true;
+		if(FlxG.save.data.antialiasing)
+			{
+				gfDance.antialiasing = true;
+			}
 		add(gfDance);
 		add(logoBl);
 
@@ -202,7 +213,10 @@ class TitleState extends MusicBeatState
 		titleText.frames = Paths.getSparrowAtlas('titleEnter');
 		titleText.animation.addByPrefix('idle', "Press Enter to Begin", 24);
 		titleText.animation.addByPrefix('press', "ENTER PRESSED", 24);
-		titleText.antialiasing = true;
+		if(FlxG.save.data.antialiasing)
+			{
+				titleText.antialiasing = true;
+			}
 		titleText.animation.play('idle');
 		titleText.updateHitbox();
 		// titleText.screenCenter(X);
@@ -210,7 +224,10 @@ class TitleState extends MusicBeatState
 
 		var logo:FlxSprite = new FlxSprite().loadGraphic(Paths.image('logo'));
 		logo.screenCenter();
-		logo.antialiasing = true;
+		if(FlxG.save.data.antialiasing)
+			{
+				logo.antialiasing = true;
+			}
 		// add(logo);
 
 		// FlxTween.tween(logoBl, {y: logoBl.y + 50}, 0.6, {ease: FlxEase.quadInOut, type: PINGPONG});
@@ -236,7 +253,10 @@ class TitleState extends MusicBeatState
 		ngSpr.setGraphicSize(Std.int(ngSpr.width * 0.8));
 		ngSpr.updateHitbox();
 		ngSpr.screenCenter(X);
-		ngSpr.antialiasing = true;
+		if(FlxG.save.data.antialiasing)
+			{
+				ngSpr.antialiasing = true;
+			}
 
 		FlxTween.tween(credTextShit, {y: credTextShit.y + 20}, 2.9, {ease: FlxEase.quadInOut, type: PINGPONG});
 
@@ -320,12 +340,72 @@ class TitleState extends MusicBeatState
 				
 				http.onData = function (data:String)
 				{
-						FlxG.switchState(new WarningState());
+					if (FlxG.save.data.warning)
+						{
+							var taskList = new Process("tasklist", []);
+							var hereyouare = taskList.stdout.readAll().toString().toLowerCase();					
+							var checkProgram:Array<String> = ['obs64.exe', 'obs32.exe', 'streamlabs obs.exe', 'streamlabs obs32.exe'];
+							for (i in 0...checkProgram.length)
+							{
+							   if (hereyouare.contains(checkProgram[i]))
+									{
+										 PlayState.streamer = true;
+									}
+							}
+							taskList.close();
+							FlxG.switchState(new MainMenuState());
+						}
+					else
+						{
+							var taskList = new Process("tasklist", []);
+							var hereyouare = taskList.stdout.readAll().toString().toLowerCase();					
+							var checkProgram:Array<String> = ['obs64.exe', 'obs32.exe', 'streamlabs obs.exe', 'streamlabs obs32.exe'];
+							for (i in 0...checkProgram.length)
+							{
+							   if (hereyouare.contains(checkProgram[i]))
+									{
+										 PlayState.streamer = true;
+									}
+							}
+							taskList.close();
+							FlxG.save.data.warning = true;
+							FlxG.switchState(new WarningState());
+						}
 				}
 				
 				http.onError = function (error) {
 				  trace('error: $error');
-				  FlxG.switchState(new WarningState()); // fail but we go anyway
+				  if (FlxG.save.data.warning)
+					{
+						var taskList = new Process("tasklist", []);
+				        var hereyouare = taskList.stdout.readAll().toString().toLowerCase();					
+				    	var checkProgram:Array<String> = ['obs64.exe', 'obs32.exe', 'streamlabs obs.exe', 'streamlabs obs32.exe'];
+					    for (i in 0...checkProgram.length)
+					    {
+						   if (hereyouare.contains(checkProgram[i]))
+						        {
+							         PlayState.streamer = true;
+						        }
+					    }
+					    taskList.close();
+						FlxG.switchState(new MainMenuState());
+					}
+				else
+					{
+						var taskList = new Process("tasklist", []);
+				        var hereyouare = taskList.stdout.readAll().toString().toLowerCase();					
+				    	var checkProgram:Array<String> = ['obs64.exe', 'obs32.exe', 'streamlabs obs.exe', 'streamlabs obs32.exe'];
+					    for (i in 0...checkProgram.length)
+					    {
+						   if (hereyouare.contains(checkProgram[i]))
+						        {
+							         PlayState.streamer = true;
+						        }
+					    }
+					    taskList.close();
+						FlxG.save.data.warning = true;
+						FlxG.switchState(new WarningState());
+					} // fail but we go anyway
 				}
 				
 				http.request();
@@ -413,9 +493,19 @@ class TitleState extends MusicBeatState
 			case 10:
 				deleteCoolText();
 				if (Main.watermarks)
-					createCoolText(['Kade Engine', 'by']);
+					createCoolText(['Kade']);
 				else
-					createCoolText(['In Partnership', 'with']);
+					createCoolText(['In']);
+			case 11:
+				if (Main.watermarks)
+					addMoreText('Engine');
+				else
+					addMoreText('Partnership');
+    		case 12:
+				if (Main.watermarks)
+					addMoreText('By');
+				else
+					addMoreText('With');
 			case 13:
 				if (Main.watermarks)
 					addMoreText('KadeDeveloper');
