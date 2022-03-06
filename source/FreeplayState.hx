@@ -171,6 +171,19 @@ class FreeplayState extends MusicBeatState
 	override function update(elapsed:Float)
 	{
 		super.update(elapsed);
+		for (i in 0...iconArray.length)
+			{
+				iconArray[i].animation.curAnim.curFrame = 0;
+			}
+		//if (Config.betterIcons)
+		if(songs[curSelected].songName.toLowerCase() == 'tutorial')
+			{
+				iconArray[curSelected].animation.curAnim.curFrame = 2;
+			}
+		else
+			{
+				iconArray[curSelected].animation.curAnim.curFrame = 5;
+			}
 
 		if (FlxG.sound.music.volume < 0.7)
 		{
