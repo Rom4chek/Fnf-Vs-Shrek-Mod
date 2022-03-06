@@ -15,6 +15,8 @@ using StringTools;
 
 class Note extends FlxSprite
 {
+	public var animOffsets:Map<String, Array<Dynamic>>;
+	
 	public var strumTime:Float = 0;
 
 	public var mustPress:Bool = false;
@@ -29,6 +31,8 @@ class Note extends FlxSprite
 	public var noteType:Int = 0;
 
 	public var noteScore:Float = 1;
+
+	public var noteYOff:Int = 0;
 
 	public static var swagWidth:Float = 160 * 0.7;
 	public static var PURP_NOTE:Int = 0;
@@ -131,7 +135,18 @@ class Note extends FlxSprite
  
 								setGraphicSize(Std.int(width * 0.7));
 								updateHitbox();
-								antialiasing = true;
+								if(FlxG.save.data.antialiasing)
+									{
+										antialiasing = true;
+									}
+								if (FlxG.save.data.imposteralpha)
+									{
+										alpha = 0.5;
+									}
+								else
+									{
+										alpha = 1;
+									}
 							}
 							case 3:
 							{
@@ -153,7 +168,18 @@ class Note extends FlxSprite
  
 								setGraphicSize(Std.int(width * 0.7));
 								updateHitbox();
-								antialiasing = true;
+								if(FlxG.save.data.antialiasing)
+									{
+										antialiasing = true;
+									}
+								if (FlxG.save.data.imposteralpha)
+									{
+										alpha = 0.5;
+									}
+								else
+									{
+										alpha = 1;
+									}
 							}
 							case 4:
 								{
@@ -175,7 +201,10 @@ class Note extends FlxSprite
 	 
 									setGraphicSize(Std.int(width * 0.7));
 									updateHitbox();
-									antialiasing = true;
+									if(FlxG.save.data.antialiasing)
+										{
+											antialiasing = true;
+										}
 								}
 							default:
 							{
@@ -197,7 +226,10 @@ class Note extends FlxSprite
  
 								setGraphicSize(Std.int(width * 0.7));
 								updateHitbox();
-								antialiasing = true;
+								if(FlxG.save.data.antialiasing)
+									{
+										antialiasing = true;
+									}
 							}
 						}
 			}
@@ -225,6 +257,8 @@ class Note extends FlxSprite
 		// THIS DOESN'T FUCKING FLIP THE NOTE, CONTRIBUTERS DON'T JUST COMMENT THIS OUT JESUS
 		if (FlxG.save.data.downscroll && sustainNote) 
 			flipY = true;
+
+		var stepHeight = (0.45 * Conductor.stepCrochet * FlxMath.roundDecimal(PlayStateChangeables.scrollSpeed == 1 ? PlayState.SONG.speed : PlayStateChangeables.scrollSpeed, 2));
 
 		if (isSustainNote && prevNote != null)
 		{
@@ -266,57 +300,44 @@ class Note extends FlxSprite
 						prevNote.animation.play('redhold');
 				}
 
+				prevNote.updateHitbox();
 
 				if(FlxG.save.data.scrollSpeed != 1)
-					prevNote.scale.y *= Conductor.stepCrochet / 100 * 2.6 * FlxG.save.data.scrollSpeed;
+					prevNote.scale.y *= Conductor.stepCrochet / 100 * 1.5 * FlxG.save.data.scrollSpeed;
 				else
-					prevNote.scale.y *= Conductor.stepCrochet / 100 * 2.6 * PlayState.SONG.speed;
+					prevNote.scale.y *= Conductor.stepCrochet / 100 * 1.5 * PlayState.SONG.speed;
 				prevNote.updateHitbox();
+				prevNote.noteYOff = Math.round(-prevNote.offset.y);
+
 				// prevNote.setGraphicSize();
+
+				noteYOff = Math.round(-offset.y);
 			}
 		}
 	}
-
+	
 	override function update(elapsed:Float)
 		{
 			super.update(elapsed);
 	
 			if (mustPress)
 				{
-					if (isSustainNote)
-					{
-						if (strumTime - Conductor.songPosition <= ((166 * Conductor.timeScale) * 0.5)
-							&& strumTime - Conductor.songPosition >= (-166 * Conductor.timeScale))
-							canBeHit = true;
-						else
-							canBeHit = false;
-					}
-					else
-					{
 						// Make bad notes harder to hit
 						if (noteType == 2)
-						{
-							if (strumTime - Conductor.songPosition <= ((166 * Conductor.timeScale) * 0.2)
-								&& strumTime - Conductor.songPosition >= (-166 * Conductor.timeScale) * 0.4)
 							{
-								canBeHit = true;
-							}
-							else
-							{
-								canBeHit = false;
-							}
+								if (strumTime > Conductor.songPosition - (Conductor.safeZoneOffset * 0.4)
+									&& strumTime < Conductor.songPosition + (Conductor.safeZoneOffset * 0.2)) // also they're almost impossible to hit late!
+									canBeHit = true;
+								else
+									canBeHit = false;
 						}
 						else if (noteType == 3)
-						{
-							if (strumTime - Conductor.songPosition <= ((166 * Conductor.timeScale) * 0.5)
-								&& strumTime - Conductor.songPosition >= (-166 * Conductor.timeScale) * 0.5)
 							{
-								canBeHit = true;
-							}
-							else
-							{
-								canBeHit = false;
-							}
+								if (strumTime > Conductor.songPosition - (Conductor.safeZoneOffset * 0.6)
+									&& strumTime < Conductor.songPosition + (Conductor.safeZoneOffset * 0.4)) // also they're almost impossible to hit late!
+									canBeHit = true;
+								else
+									canBeHit = false;
 						}
 						else
 						{
@@ -326,8 +347,7 @@ class Note extends FlxSprite
 							else
 								canBeHit = false;
 						}
-					}
-					if (strumTime - Conductor.songPosition < -166 && !wasGoodHit)
+					if (strumTime < Conductor.songPosition - Conductor.safeZoneOffset && !wasGoodHit)
 						tooLate = true;
 				}
 				else
@@ -335,17 +355,18 @@ class Note extends FlxSprite
 					canBeHit = false;
 		
 					if (strumTime <= Conductor.songPosition)
-					{
 						wasGoodHit = true;
-					}
 				}
 		
-				if (tooLate && !wasGoodHit)
-				{
-					if (alpha > 0.3)
+				if (tooLate)
 					{
-						alpha = 0.3;
+						if (alpha > 0.3)
+							alpha = 0.3;
 					}
 				}
+			
+				public function addOffset(name:String, x:Float = 0, y:Float = 0)
+				{
+					animOffsets[name] = [x, y];
+				}
 			}
-        }
