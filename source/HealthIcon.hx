@@ -1,5 +1,7 @@
+
 package;
 
+import flixel.FlxG;
 import flixel.FlxSprite;
 
 class HealthIcon extends FlxSprite
@@ -7,57 +9,70 @@ class HealthIcon extends FlxSprite
 	/**
 	 * Used for FreeplayState! If you use it elsewhere, prob gonna annoying
 	 */
-	public var sprTracker:FlxSprite;
+	 public var sprTracker:FlxSprite;
+	 public var char:String;
+	 public var isPlayer:Bool = false;
 
 	public function new(char:String = 'bf', isPlayer:Bool = false)
 	{
 		super();
+		if(FlxG.save.data.antialiasing)
+			{
+				antialiasing = true;
+			}
+		this.char = char;
+		switch (char) {
+			case 'bf':
+				loadGraphic(Paths.image('icons/icon-bf'), true, 150, 150);
+				animation.add('bf', [0, 1, 2, 3, 4], 0, false, isPlayer);
+			case 'gf':
+				loadGraphic(Paths.image('icons/icon-gf'), true, 150, 150);
+				animation.add('gf', [0, 1, 2, 3, 4], 0, false, isPlayer);
+			case 'shrek'| 'angry-shrek' | 'tired-shrek':
+				loadGraphic(Paths.image('icons/icon-shrek'), true, 150, 150);
+				animation.add('shrek', [0, 1, 2, 3, 4], 0, false, isPlayer);
+				animation.add('angry-shrek', [0, 1, 2, 3, 4], 0, false, isPlayer);
+				animation.add('tired-shrek', [0, 1, 2, 3, 4], 0, false, isPlayer);
+			case 'donkey-shrek' | 'donkey-shrek-happy' | 'donkey-shrek-angry' | 'donkey-shrek-tired' | 'donkey-shrek-serious' | 'donkey-shrek-god' | 'donkey-shrek-final':
+				loadGraphic(Paths.image('icons/icon-donkeyshrek'), true, 150, 150);
+				animation.add('donkey-shrek', [0, 1, 2, 3, 4], 0, false, isPlayer);
+				animation.add('donkey-shrek-happy', [0, 1, 2, 3, 4], 0, false, isPlayer);
+				animation.add('donkey-shrek-angry', [0, 1, 2, 3, 4], 0, false, isPlayer);
+				animation.add('donkey-shrek-tired', [0, 1, 2, 3, 4], 0, false, isPlayer);
+				animation.add('donkey-shrek-god', [0, 1, 2, 3, 4], 0, false, isPlayer);
+				animation.add('donkey-shrek-tired', [0, 1, 2, 3, 4], 0, false, isPlayer);
+				animation.add('donkey-shrek-final', [0, 1, 2, 3, 4], 0, false, isPlayer);
+			case 'donkey':
+				loadGraphic(Paths.image('icons/icon-donkey'), true, 150, 150);
+				animation.add('donkey', [0, 1, 2, 3, 4], 0, false, isPlayer);
+			case 'china-shrek':
+				loadGraphic(Paths.image('icons/icon-chinashrek'), true, 150, 150);
+				animation.add('china-shrek', [0, 1, 2, 3, 4], 0, false, isPlayer); 
 		
-		loadGraphic(Paths.image('iconGrid'), true, 150, 150);
-		antialiasing = true;
-		animation.add('bf', [0, 1], 0, false, isPlayer);
-		animation.add('bf-car', [0, 1], 0, false, isPlayer);
-		animation.add('bf-christmas', [0, 1], 0, false, isPlayer);
-		animation.add('bf-pixel', [21, 21], 0, false, isPlayer);
-		animation.add('spooky', [2, 3], 0, false, isPlayer);
-		animation.add('pico', [4, 5], 0, false, isPlayer);
-		animation.add('mom', [6, 7], 0, false, isPlayer);
-		animation.add('mom-car', [6, 7], 0, false, isPlayer);
-		animation.add('tankman', [8, 9], 0, false, isPlayer);
-		animation.add('face', [10, 11], 0, false, isPlayer);
-		animation.add('dad', [12, 13], 0, false, isPlayer);
-		animation.add('senpai', [22, 22], 0, false, isPlayer);
-		animation.add('senpai-angry', [22, 22], 0, false, isPlayer);
-		animation.add('spirit', [23, 23], 0, false, isPlayer);
-		animation.add('bf-old', [14, 15], 0, false, isPlayer);
-		animation.add('gf', [16], 0, false, isPlayer);
-		animation.add('gf-christmas', [16], 0, false, isPlayer);
-		animation.add('gf-pixel', [16], 0, false, isPlayer);
-		animation.add('parents-christmas', [17, 18], 0, false, isPlayer);
-		animation.add('monster', [19, 20], 0, false, isPlayer);
-		animation.add('monster-christmas', [19, 20], 0, false, isPlayer);
-		animation.add('shrek', [24, 25], 0, false, isPlayer);
-		animation.add('shrek-cutscene-one', [24, 25], 0, false, isPlayer);
-		animation.add('shrek-cutscene-two', [24, 25], 0, false, isPlayer);
-		animation.add('angry-shrek', [24, 25], 0, false, isPlayer);
-		animation.add('tired-shrek', [24, 25], 0, false, isPlayer);
-		animation.add('donkey-shrek', [26, 27], 0, false, isPlayer);
-		animation.add('donkey-shrek-happy', [26, 27], 0, false, isPlayer);
-		animation.add('donkey-shrek-angry', [26, 27], 0, false, isPlayer);
-		animation.add('donkey-shrek-tired', [26, 27], 0, false, isPlayer);
-		animation.add('donkey-shrek-serious', [26, 27], 0, false, isPlayer);
-		animation.add('donkey-shrek-god', [26, 27], 0, false, isPlayer);
-		animation.add('donkey', [28, 29], 0, false, isPlayer);
-		animation.add('donkey-shrek-final', [26, 27], 0, false, isPlayer);
-		animation.play(char);
+		default:
+			loadGraphic(Paths.image('iconGrid'), true, 150, 150);
+
+			animation.add('dad', [12, 13], 0, false, isPlayer);
+			animation.add('bfdad', [0, 1,], 0, false, isPlayer);
+	    	/*animation.add('donkey-shrek', [26, 27], 0, false, isPlayer);
+	    	animation.add('donkey-shrek-happy', [26, 27], 0, false, isPlayer);
+	    	animation.add('donkey-shrek-angry', [26, 27], 0, false, isPlayer);
+	    	animation.add('donkey-shrek-tired', [26, 27], 0, false, isPlayer);
+	    	animation.add('donkey-shrek-serious', [26, 27], 0, false, isPlayer);
+	      	animation.add('donkey-shrek-god', [26, 27], 0, false, isPlayer);
+	    	animation.add('donkey', [28, 29], 0, false, isPlayer);
+	    	animation.add('donkey-shrek-final', [26, 27], 0, false, isPlayer);
+	    	animation.add('china-shrek', [24, 25], 0, false, isPlayer);*/
 
 		switch(char)
 		{
 			case 'bf-pixel' | 'senpai' | 'senpai-angry' | 'spirit' | 'gf-pixel':
 				antialiasing = false;
 		}
-		scrollFactor.set();
 	}
+	animation.play(char);
+	scrollFactor.set();
+}
 
 	override function update(elapsed:Float)
 	{
